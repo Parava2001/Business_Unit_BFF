@@ -1,0 +1,81 @@
+<br><br><br>
+<div class="yop">
+<div class="card flex justify-content-center">
+    <p-dropdown  [options]=" CustomerList" [(ngModel)]=" selectedList" optionLabel="name" placeholder="Customer List"></p-dropdown>
+</div>
+
+<div class="card flex justify-content-center" >
+    <div class="top">
+    <p-toggleButton [(ngModel)]="checked" onLabel="Active" offLabel="InActive"></p-toggleButton>
+</div>
+</div>
+<div class="sop">
+<div class="card flex justify-content-center">
+    <p-button label="Submit"></p-button> 
+</div>
+</div>
+
+</div>
+<br>
+
+<div class="card">
+    <p-table
+     
+        [value]="Bvalue"
+        [paginator]="true"
+        [rows]="5"
+        [showCurrentPageReport]="true"
+        [tableStyle]="{ 'min-width': '50rem' }"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [rowsPerPageOptions]="[10, 25, 50]" >
+        <ng-template pTemplate="header"
+                                       let-columns>
+            <tr>
+                <th> </th>
+                <th style="width:25%">Id</th>
+                 <th style="width:25%">Business Unit</th>
+                <th style="width:25%">Vertical</th>
+                <th style="width:25%">Channel</th>
+                <th style="width:25%">Status</th> 
+                <th style="width:25%">Synapse Customer</th>
+                <th style="width:25%">Inactive Date</th> 
+                <th style="width:25%">Active Date</th>
+                <th style="width:25%">LastUpdate Date</th> 
+                <th style="width:25%">LastUpdate User</th> 
+
+                 <!-- <th *ngFor="let col of columns">
+                    {{ col.header }}
+                </th>  -->
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" 
+                                   
+                                      let-Bvalue >
+            <tr>
+                <td> <button type="button" (click)="onEdit(Bvalue.id)">Edit</button></td>
+
+                 <td>{{ Bvalue.id }}</td>
+                 <td>{{ Bvalue.businessUnit }}</td>
+                <td>{{ Bvalue.vertical}}</td>
+                <td>{{ Bvalue.channel}}</td>
+                <td>{{ Bvalue.status}}</td>
+                <td>{{ Bvalue.synapseCustomer}}</td>
+                <td>{{ Bvalue.inactiveDate}}</td>
+               
+                <!-- <td *ngFor="let col of columns">
+                    
+                    {{ rowData[col.field] }} 
+                    
+                </td>  -->
+
+    
+             </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft">
+            <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+        </ng-template>
+        <ng-template pTemplate="paginatorright">
+            <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+        </ng-template>
+    </p-table>
+</div> 

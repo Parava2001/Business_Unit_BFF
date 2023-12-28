@@ -1,0 +1,50 @@
+
+
+.contanier{
+    width:100%;
+    height:100vh;
+    /* display: flex; */
+}
+
+
+.left{
+    width:113%;
+    margin-left:-75px; 
+    height:86dvh;
+     background-color: white;
+     padding-left: 100px; 
+    
+    
+}
+ .switch{
+    padding : auto;
+    display: flex;
+    background-color: white;
+ }
+
+ .button1{
+    padding: 10px;
+    margin-left:-75px;
+    border-radius: 20px;
+  
+    
+ }
+
+ .button2{
+    padding: 10px;
+    border-radius: 20px;
+    margin: 68%;
+ }
+ .end-btn{
+   background-color: white;
+  }
+
+.nxt-btn{
+   padding-left: 80%;
+}
+
+.cancel-btn{
+   position: absolute;
+   top : 1055px; 
+}
+

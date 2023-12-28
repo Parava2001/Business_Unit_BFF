@@ -1,0 +1,146 @@
+
+
+
+    <h2><b>Customer Details</b></h2>
+<form #form ="ngForm" (ngSubmit) = "onSubmit(form)">   
+
+
+        <div class="form-group">
+            <label for ="Cname"></label>
+            <input id ='Cname' name="Cname" class="form-control" [(ngModel)] = "CustomerData.customerName" placeholder="Customer Name" 
+            required #namefield = "ngModel"> 
+            <!-- [class.error]="form.submitted && namefield.invalid"
+            <div [hidden]="!form.submitted || namefield.valid"
+               class="alert alert-danger"> Enter the Customer Name</div> -->
+
+            </div>
+        
+        <br>
+
+        <div class="form-group">
+                <label for ="Aname"></label>
+            <input id ='Aname' name="Aname" class="form-control"  placeholder="Abbreviation"[(ngModel)] = "CustomerData.abbreviation"  required  >
+        </div>
+
+
+        <br>
+    
+                <div class="form-group">
+                    <label for ="Nname"></label>
+                <input id ='Nname' name="Nname" class="form-control" placeholder="Contact Number" [(ngModel)] = "CustomerData.contactNumber" type="number" max="12" min="10" required #namefield = "ngModel">
+                <!-- [class.error] ="form.submitted && namefield.invalid"
+                    <div [hidden]="!form.submitted || namefield.valid"
+                        class="alert alert-danger">Enter the Contact Number</div> -->
+                
+                
+                </div>
+                
+            
+
+    
+            <br>
+        
+            <div class="form-group">
+                <label for ="A1name"></label>
+                    <input id ='AAname' name="AAname" class="form-control" placeholder="Address Line 1" [(ngModel)] = "CustomerData.address1"  required #namefield = "ngModel">
+                      <!-- [class.error] ="form.submitted && namefield.invalid"
+                    <div [hidden]="!form.submitted || namefield.valid " 
+                        class="alert alert-danger">Enter the Address</div>  -->
+                    
+                    </div>
+
+
+            <br>
+            <div class="form-group">
+                <label for ="Aaname"></label>
+                <input id ='Aaname' name="Aaname" class="form-control" placeholder="Address Line 2 " [(ngModel)] = "CustomerData.address2">
+            </div>
+        
+
+            <br>
+    
+        <div class="form-group">
+            <label for ="countryTypes">Country/Territory</label>
+
+            <select class="form-select" aria-label="Default select example" id="CountryTypes" name="CountryTypes" [(ngModel)] = "CustomerData.country">
+                <!-- <option selected  ></option> -->
+                <option *ngFor ="let types of CountryTypes | async" >
+                {{ types }}
+              </option>
+
+            
+             </select>
+        </div>
+    
+            <br>
+            
+            <div class="form-group">
+                <label for ="CCname"></label>
+                <input id ='CCname' name="CCname" class="form-control" placeholder="City" [(ngModel)] ="CustomerData.city" >
+            </div>
+            
+            <br>
+            
+            <div class="form-group">
+                <label for ="Pname"></label>
+             <input id ='Pname' name="Pname" class="form-control"  placeholder="Postal" [(ngModel)] ="CustomerData.postal"  >
+            
+            </div>
+      
+    <br>
+            
+        
+            <div class="form-group">
+                <label for ="Ename"></label>
+                <input id ='Ename' name="Ename" class="form-control"placeholder="Customer Email"  [(ngModel)] ="CustomerData.customerEmail" required>
+            
+            </div>
+            
+
+            <br>
+            
+            <div class="form-group">
+                <label for ="Uname"></label>
+                <input id ='Uname' name="Uname" class="form-control" placeholder="Customer URL" [(ngModel)] ="CustomerData.customerUrl">
+            </div>
+            
+
+            <br>
+            
+            <div class="form-group">
+                <label for ="Pname"></label>
+                <input id ='Pname' name="Pname" class="form-control" placeholder="Contact Phone" [(ngModel)] ="CustomerData.contactPhone"  >
+            </div>
+            
+
+
+            <br>
+                <label for ="Sname"></label>
+
+                <button type="button" class="btn btn-primary" name="singleModel"
+                [(ngModel)]="singleToggle" btnCheckbox
+                btnCheckboxTrue="On" btnCheckboxFalse="Off">
+                {{singleToggle}}
+                </button>
+
+
+
+            <br>
+            
+            <div class="form-group">
+                <label for ="Dname"></label>
+                <input type ='Ddate' name="Dname" class="form-control" placeholder="Active Date" [(ngModel)] ="CustomerData.activeDate">
+            </div>
+
+
+            <div [hidden]="!postError"  
+            class = "alert alert-danger">
+            {{postErrorMessage}}
+            </div>
+            <br>
+            <button class="btn btn-primary" (click)="onSubmit(form)">SAVE</button>
+        
+    </form> 
+ 
+ {{ CustomerData | json }} 
+        

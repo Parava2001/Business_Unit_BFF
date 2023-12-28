@@ -1,0 +1,68 @@
+/* .nav-bar{
+    position: sticky;
+color: red;
+width: 100%;
+background-color: black ;
+}
+
+.logo{
+    background-image: url('account.png');
+} */
+
+/* .spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-card {
+    max-width: 2000px;
+    height: 80px;
+    background-color: black;
+  }
+  
+  .example-header-image {
+    background-image: url('/assets/geodis.png');
+    background-size:cover ;
+    width: 50px;
+    height:35px;
+    margin:10px; 
+}
+
+.head{
+color: white;
+height: 400px; 
+width: 400px;
+font-size: 50px; 
+padding: auto;
+}
+.home-btn{
+   height: 50px;
+   width: 50px;
+  
+}
+.tool{
+    background-color:black;
+    width:50px;
+
+} */
+.example-button-row{
+    margin: auto;
+    width: 60%;
+    margin-top: 16%;
+    margin-left:15%;
+ 
+}
+.button{
+    width: 50%;
+    height: 200px;
+}
+.container{
+    display: flex;
+    align-items: center;
+}
+ .example-button-col{
+    margin: auto;
+    width:50%;
+     margin-top:-16%; 
+     margin-right:-15%;
+ 
+} 

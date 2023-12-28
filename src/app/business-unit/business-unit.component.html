@@ -1,0 +1,37 @@
+
+    <div class="container" >
+    <div class="left">
+    <mat-toolbar class="switch">
+        <button class = "button1" type="button" (click)="onSearch()"><b>Search Business Unit</b></button>
+        <button  class = "button2" type="button" (click)="onAdd()"><b>Add Business Unit</b></button>
+    </mat-toolbar>
+
+    <div class="context">
+    <app-search-business-unit *ngIf=boolsearch> </app-search-business-unit>
+    <app-add-business-unit *ngIf=booladd></app-add-business-unit>
+    </div> 
+   <!-- <br><br><br> -->
+    <mat-toolbar class="end-btn">
+       
+        <div class="clse-btn">
+            <button type="button" *ngIf="boolsearch" routerLink = "/home">CLOSE X </button>
+        </div>
+        <div class ="nxt-btn">
+            <button type="button" *ngIf="boolsearch" (click)="onAdd()">NEXT</button>
+        </div>
+
+        </mat-toolbar>
+
+         <mat-toolbar class="end-btn">
+            <div class="cancel-btn">
+                <button type="button" *ngIf ="booladd" (click)="onSearch()">CANCEL X</button>
+            </div>
+            <!-- <div class="nxt-btn">
+                <button type="button" *ngIf ="booladd" (click)="onSubmit(form)">SAVE</button>
+            </div>  -->
+        </mat-toolbar> 
+
+
+
+    </div>
+    </div>

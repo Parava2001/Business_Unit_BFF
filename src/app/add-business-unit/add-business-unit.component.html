@@ -1,0 +1,66 @@
+    <br><br>
+<!-- <form #form="ngForm"  (ngSubmit) = "onSubmit(form)" > -->
+    <form [formGroup] = "businessList" >      <!-- // Reactive Forms used -->
+        <div class="form-group">
+            <label for ="Cname">Customer Name</label>
+        
+            <input id ='Cname' formControlName="CustomerName" class="form-control" placeholder="Customer Name"  >
+         </div>
+        <br><br>
+        <div class="form-group">
+            <label for ="BUnit">Business Unit</label>
+     
+            <input id ='BUnit' formControlName="BusinessUnit" class="form-control" placeholder="Business Unit" >
+           </div>
+            <br><br>
+        <div class="form-group">
+            <label for ="BUnitName">Business Unit Name</label>
+     
+            <input id ='BUnitName' formControlName="BusinessUnitName" class="form-control" placeholder="Business Unit Name" >
+         </div>  
+         <br><br>
+        <div class="form-group">
+            <label for ="vertical">Vertical</label>
+         
+            <input id ='vertical' formControlName="Vertical" class="form-control" placeholder="Vertical" >
+        </div> 
+        <br><br>
+        <div class="form-group">
+            <label for ="channel">Channel</label>
+           
+            <input id ='channel' formControlName="Channel" class="form-control" placeholder="Channel" >
+        </div> 
+        <br><br>
+        <div class="form-group">
+            <label for ="sCustomer">Synapse Customer</label>
+        
+            <input id ='sCustomer'formControlName="SynapseCustomer" class="form-control" placeholder="Synapse Customer" >
+        </div>
+
+
+<br><br>
+<p class="led">Status</p>
+
+<div class="card flex justify-content-center">
+    <p-toggleButton formControlName="Status"  onLabel="Yes" offLabel="No"></p-toggleButton>
+</div>
+
+<br><br>
+    <div class="form-group">
+        <label for ="inactivedate">Inactive Date</label>
+        <input id ='inactivedate' formControlName="InactiveDate" class="form-control" placeholder="Inactive Date">
+    </div> 
+</form>
+<br><br><br><br><br>
+ <mat-toolbar class="end-btn">
+        <!-- <div class="cancel-btn">
+            <button type="button" *ngIf ="booladd" (click)="onSearch()">CANCEL X</button>
+        </div> -->
+    <div class="nxt-btn">
+        <button type="button" *ngIf ="booladd" (click)="onSubmit()">SAVE</button>
+    </div>
+</mat-toolbar>  
+
+<br>
+<!-- {{ originalBusinessList | json }} // if the customer forgot to save or make a back without submitting the content then their will be a saving of the content in originalBusinessList -->
+{{ businessList.value | json }}  
